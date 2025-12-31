@@ -1,9 +1,8 @@
-NAME = brain
-
+NAME = replace 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp 
+SRCS =  main.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -15,7 +14,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) *.replace
 
 fclean: clean
 	rm -f $(NAME)
@@ -23,3 +22,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

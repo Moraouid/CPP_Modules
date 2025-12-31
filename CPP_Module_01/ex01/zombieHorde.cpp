@@ -6,7 +6,7 @@
 /*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:59:41 by sel-abbo          #+#    #+#             */
-/*   Updated: 2025/12/30 21:33:16 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2025/12/31 23:06:33 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
+    if (N <= 0)
+        return NULL;
     Zombie *axeman = new Zombie[N];
 
     for(int i = 0; i < N; i++)

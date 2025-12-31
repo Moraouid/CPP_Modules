@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 18:18:06 by sel-abbo          #+#    #+#             */
-/*   Updated: 2025/12/30 19:32:41 by sel-abbo         ###   ########.fr       */
+/*   Created: 2025/12/31 22:21:35 by sel-abbo          #+#    #+#             */
+/*   Updated: 2025/12/31 23:24:18 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
 int main()
 {
-    Zombie axeman("Boo");
-    axeman.announce();
+    Harl harl;
 
-    Zombie *said = newZombie("Fooooooooo");
-    said->announce();
-    
-    randomChump("Foo");
-    
-    delete said;
-
-    return 0;
+    harl.complain("DEBUG");
+    harl.complain("ERROR");
+    harl.complain("WARNING");
+    harl.complain("INFO");
 }
