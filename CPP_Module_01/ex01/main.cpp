@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 18:15:35 by sel-abbo          #+#    #+#             */
-/*   Updated: 2025/12/30 21:03:58 by sel-abbo         ###   ########.fr       */
+/*   Created: 2025/12/30 18:18:06 by sel-abbo          #+#    #+#             */
+/*   Updated: 2025/12/30 21:34:26 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+int main()
 {
-    this->name = name;
-}
-
-void Zombie::announce( void )
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
-}
-
-Zombie::~Zombie()
-{
-    std::cout << name << " is destroyed\n"; 
+    Zombie *axeman = zombieHorde(5, "Foo");
+    axeman[2].setName("zatais");
+    for (int i = 0; i < 5; i++)
+        axeman[i].announce();
+    return 0;
 }

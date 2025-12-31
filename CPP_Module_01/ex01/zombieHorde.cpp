@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 18:15:35 by sel-abbo          #+#    #+#             */
-/*   Updated: 2025/12/30 21:03:58 by sel-abbo         ###   ########.fr       */
+/*   Created: 2025/12/30 20:59:41 by sel-abbo          #+#    #+#             */
+/*   Updated: 2025/12/30 21:33:16 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie* zombieHorde( int N, std::string name )
 {
-    this->name = name;
-}
+    Zombie *axeman = new Zombie[N];
 
-void Zombie::announce( void )
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
-}
-
-Zombie::~Zombie()
-{
-    std::cout << name << " is destroyed\n"; 
+    for(int i = 0; i < N; i++)
+    {
+        axeman[i].setName(name);
+    }
+    return axeman;
 }
