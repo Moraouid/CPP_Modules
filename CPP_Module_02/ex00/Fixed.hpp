@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/02 10:39:24 by sel-abbo          #+#    #+#             */
+/*   Updated: 2026/01/02 18:32:34 by sel-abbo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
+#include <iostream>
+
+class Fixed
+{
+private:
+    int number;
+    static const int fract = 8;
+
+public:
+    Fixed();
+    Fixed(const Fixed &other);
+    Fixed &operator=(const Fixed &other);
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
+    ~Fixed();
+};
+
+#endif
