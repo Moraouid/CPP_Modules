@@ -6,24 +6,25 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:32:04 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 17:49:35 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/03 21:05:41 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int main(void)
 {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+    Point a(0, 0);
+    Point b(5, 0);
+    Point c(2,3);
+    Point point(2, 3);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-
-    std::cout << Fixed::min(a, b) << std::endl;
-    return 0;
+    if (bsp(a, b, c, point))
+        std::cout << "inside" << std::endl;
+    else
+        std::cout << "outside" << std::endl;
+        
+    
+    
 }

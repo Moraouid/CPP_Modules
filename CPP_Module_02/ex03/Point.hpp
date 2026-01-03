@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 18:32:04 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 17:49:35 by sel-abbo         ###   ########.fr       */
+/*   Created: 2026/01/03 15:11:21 by sel-abbo          #+#    #+#             */
+/*   Updated: 2026/01/03 21:04:42 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
+
+
 #include "Fixed.hpp"
 
-int main(void)
+class Point
 {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
+private:
+    const Fixed x;
+    const Fixed y;
+public:
+    Point();
+    Point(const Fixed point_x, Fixed const point_y);
+    Point(const Point &other);
+    Point &operator=(const Point &other);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
+    Fixed getX() const;
+    Fixed getY() const;
+    ~Point();
+};
 
-    std::cout << Fixed::min(a, b) << std::endl;
-    return 0;
-}
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif
