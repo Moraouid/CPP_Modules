@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:39:24 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 17:32:47 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/05 00:41:18 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,10 @@ public:
 
     float toFloat(void) const;
     int toInt(void) const;
+
     ~Fixed();
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &other);
-
-
 
 #endif

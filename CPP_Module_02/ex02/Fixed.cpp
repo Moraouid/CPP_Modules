@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:39:17 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 13:35:21 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/05 00:36:49 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const int nb)
 
 Fixed::Fixed(const float nb)
 {
-    // std::cout << "Float constructor called" << std::endl;
+    std::cout << "Float constructor called" << std::endl;
     number = roundf(nb * (1 << fract));
 }
 

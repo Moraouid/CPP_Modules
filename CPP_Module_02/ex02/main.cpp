@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 18:32:04 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 17:49:35 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/05 00:35:18 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int main(void)
     std::cout << a << std::endl;
     std::cout << b << std::endl;
 
-    std::cout << Fixed::min(a, b) << std::endl;
+    std::cout << Fixed::max(a, b) << std::endl;
     return 0;
 }

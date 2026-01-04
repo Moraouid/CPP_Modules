@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:39:24 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/03 13:31:30 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/04 23:50:55 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ public:
 
     float toFloat(void) const;
     int toInt(void) const;
+
     ~Fixed();
 };
 

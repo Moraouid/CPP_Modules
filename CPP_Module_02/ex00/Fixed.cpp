@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:39:17 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/02 18:41:12 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/05 00:39:08 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
+    std::cout << "setRawBits member function called" << std::endl;
     number = raw;
 }
 

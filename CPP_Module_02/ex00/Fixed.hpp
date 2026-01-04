@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:39:24 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/02 18:32:34 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/04 23:50:40 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ public:
     Fixed();
     Fixed(const Fixed &other);
     Fixed &operator=(const Fixed &other);
+
     int getRawBits(void) const;
     void setRawBits(int const raw);
+
     ~Fixed();
 };
 
