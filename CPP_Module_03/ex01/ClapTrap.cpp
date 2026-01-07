@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:11:36 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/07 20:55:20 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/07 22:31:02 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "ClapTrap: Default Constructor called" << std::endl;
 	name = "CJ";
 	HP = 10;
 	EP = 10;
@@ -32,13 +32,13 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "ClapTrap: Copy Constructor called" << std::endl;
 	*this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap: Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->name = other.name;
@@ -90,5 +90,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called for ClapTrap" << std::endl;
+	std::cout << "ClapTrap: Destructor called for ClapTrap" << std::endl;
 }
