@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 11:26:23 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/10 22:10:02 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/10 22:09:54 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
+	//const Animal* j = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     

@@ -1,51 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 11:53:26 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/10 22:09:00 by sel-abbo         ###   ########.fr       */
+/*   Created: 2026/01/10 15:04:55 by sel-abbo          #+#    #+#             */
+/*   Updated: 2026/01/10 19:08:10 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
 
-Cat::Cat()
+#include "WrongCat.hpp"
+
+WrongCat::WrongCat()
 {
-	std::cout << "Cat default Constractorlt" << std::endl;
-	type = "Cat";
-	ideas = new Brain();
+	std::cout << "WrongCat default Constractorlt" << std::endl;
+	type = "WrongCat";
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
-	std::cout << "Cat Copy Constructor called" << std::endl;
+	std::cout << "WrongCat Copy Constructor called" << std::endl;
 	this->type = other.type;
-	this->ideas = new Brain(*other.ideas);
 }
 
 
-Cat &Cat::operator=(const Cat &other)
+WrongCat &WrongCat::operator=(const WrongCat &other)
 {
-	std::cout << "Cat Copy assignment operator called" << std::endl;
+	std::cout << "WrongCat Copy assignment operator called" << std::endl;
 	if(this != &other)
-	{
 		this->type = other.type;
-		delete ideas;
-		this->ideas = new Brain(*other.ideas);
-	}
 	return  *this;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
 	std::cout << "Meow" << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat Destructor called" << std::endl;	
-	delete ideas;
+	std::cout << "WrongCat Destructor called" << std::endl;	
 }

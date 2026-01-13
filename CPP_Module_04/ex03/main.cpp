@@ -5,39 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 11:26:23 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/10 22:10:02 by sel-abbo         ###   ########.fr       */
+/*   Created: 2026/01/12 16:03:57 by sel-abbo          #+#    #+#             */
+/*   Updated: 2026/01/13 00:53:35 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    delete j; 
-    delete i;
-    
-	std::cout << "---------------------" << std::endl;
+	IMateriaSource *src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-    int size = 10;
-    Animal* animals[size];
-    for (int i = 0; i < size; i++) {
-        if (i < size / 2)
-            animals[i] = new Dog();
-        else
-            animals[i] = new Cat();
-    }
+	ICharacter *me = new Character("me");
+
+	AMateria *tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	ICharacter *bob = new Character("bob");
 	
-	std::cout << "---------------------" << std::endl;
-    
-	for (int i = 0; i < size; i++) {
-        delete animals[i];
-    }
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
 
-    return 0;
+	return 0;
 }
