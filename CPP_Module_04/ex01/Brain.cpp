@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 20:46:52 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/12 19:04:32 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:55:01 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Brain &Brain::operator=(const Brain &other)
 	std::cout << "Brain Copy assignment operator called" << std::endl;
 	if(this != &other)
 	{
-		delete [] this->ideas;
 		for (int i = 0; i < 100; i++)
 			this->ideas[i] = other.ideas[i];
 	}
