@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: sel-abbo <sel-abbo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 20:50:06 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/01/17 21:28:22 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/02/03 00:25:24 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat
 {
   private:
-	std::string name;
+	const std::string name;
 	int grade;
 
   public:
@@ -37,7 +37,7 @@ class Bureaucrat
 
 	Bureaucrat();
 	Bureaucrat(const Bureaucrat &other);
-    Bureaucrat(std::string name, int grade);
+    Bureaucrat(const std::string name, int grade);
 	Bureaucrat &operator=(const Bureaucrat &other);
 
 	std::string getName() const;
