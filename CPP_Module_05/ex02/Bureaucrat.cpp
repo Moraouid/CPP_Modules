@@ -6,15 +6,22 @@
 /*   By: sel-abbo <sel-abbo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 22:08:14 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/02/04 20:50:15 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/02/05 17:36:29 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() { return "Grade is too high!"; }
-const char *Bureaucrat::GradeTooLowException::what() const throw() { return "Grade is too low!"; }
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade is too high!";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade is too low!";
+}
 
 Bureaucrat::Bureaucrat() : name("CJ"), grade(150)
 {
@@ -66,7 +73,7 @@ void Bureaucrat::incrementGrade()
     grade--;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
