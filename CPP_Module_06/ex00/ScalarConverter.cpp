@@ -6,11 +6,24 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 17:55:51 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/03/05 23:20:12 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/05/10 02:15:10 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+    (void)other;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+{
+    (void)other;
+    return *this;
+}
 
 bool isChar(std::string s)
 {
@@ -46,11 +59,7 @@ bool isFloat(std::string s)
     for (size_t i = start; i < s.length() - 1; ++i)
     {
         if (s[i] == '.')
-        {
             dots++;
-            if (dots > 1)
-                return false;
-        }
         else if (!isdigit(s[i]))
             return false;
     }
@@ -60,27 +69,23 @@ bool isFloat(std::string s)
 
 bool isDouble(std::string s)
 {
-	if (s == "nan" || s == "+inf" || s == "-inf" || s == "inf")
-		return true;
+    if (s == "nan" || s == "+inf" || s == "-inf" || s == "inf")
+        return true;
 
-	size_t start = 0;
-	if (s[0] == '+' || s[0] == '-')
-		start = 1;
-		
-	int dots = 0;
-	for (size_t i = start; i < s.length() - 1; ++i)
-	{
-		if (s[i] == '.')
-		{
-			dots++;
-			if (dots > 1)
-				return false;
-		}
-		else if (!isdigit(s[i]))
-			return false;
-	}
+    size_t start = 0;
+    if (s[0] == '+' || s[0] == '-')
+        start = 1;
 
-	return dots == 1;
+    int dots = 0;
+    for (size_t i = start; i < s.length(); ++i)
+    {
+        if (s[i] == '.')
+            dots++;
+        else if (!isdigit(s[i]))
+            return false;
+    }
+
+    return dots == 1;
 }
 
 void convertChar(char c)
@@ -125,9 +130,11 @@ void convertFloat(float f)
     if (f == static_cast<int>(f) && !std::isnan(f) && !std::isinf(f))
         std::cout << ".0";
     std::cout << "f" << std::endl;
+
     std::cout << "double: " << static_cast<double>(f);
     if (f == static_cast<int>(f) && !std::isnan(f) && !std::isinf(f))
         std::cout << ".0" << std::endl;
+    std::cout << std::endl;
 }
 
 void convertDouble(double d)
@@ -136,7 +143,7 @@ void convertDouble(double d)
     if (std::isnan(d) || std::isinf(d))
         std::cout << "impossible";
     else if (d >= 32 && d <= 126 && static_cast<int>(d) == d)
-        std::cout << "'" << static_cast<char>(d) << "'";
+        std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
     else if (d < 32 || d > 126)
         std::cout << "Non displayable";
     else
@@ -154,30 +161,18 @@ void convertDouble(double d)
     if (d == static_cast<int>(d) && !std::isnan(d) && !std::isinf(d))
         std::cout << ".0";
     std::cout << "f" << std::endl;
+
     std::cout << "double: " << d;
     if (d == static_cast<int>(d) && !std::isnan(d) && !std::isinf(d))
         std::cout << ".0";
     std::cout << std::endl;
 }
 
-ScalarConverter::ScalarConverter() {}
-
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
-{
-    (void)other;
-}
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
-{
-    (void)other;
-    return *this;
-}
-
 void ScalarConverter::convert(std::string literal)
 {
     if (literal.empty())
-        return;
-    if (isChar(literal))
+        std::cout << "invalid input" << std::endl;
+    else if (isChar(literal))
         convertChar(literal[0]);
     else if (isInt(literal))
         convertInt(atoi(literal.c_str()));
