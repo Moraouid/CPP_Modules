@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 19:12:21 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/05/24 05:53:24 by sel-abbo         ###   ########.fr       */
+/*   Created: 2026/05/24 05:51:54 by sel-abbo          #+#    #+#             */
+/*   Updated: 2026/05/24 05:57:38 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "BitcoinExchange.hpp"
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	if (ac < 2)
-	{
-		std ::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return (0);
-	}
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			std ::cout << (char)toupper(av[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std ::cout << "\n";
-	return (0);
+    if (ac != 2)
+    {
+        std::cout << "Error: could not open file" << std::endl;
+        return 1;
+    }
 }

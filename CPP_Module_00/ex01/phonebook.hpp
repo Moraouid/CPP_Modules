@@ -1,28 +1,21 @@
-<<<<<<< HEAD
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 19:13:40 by sel-abbo          #+#    #+#             */
-/*   Updated: 2025/12/29 11:49:48 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/05/24 05:54:01 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
->>>>>>> 952e0e5 (module00--done)
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
 #include "contact.hpp"
-<<<<<<< HEAD
-#include <string.h>
-=======
 #include <iomanip>
 #include <iostream>
->>>>>>> 952e0e5 (module00--done)
 
 class PhoneBook
 {
