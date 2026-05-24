@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 05:54:53 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/05/22 00:01:58 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/05/22 17:35:42 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ void Span::addNumber(T begin, T end)
 {
     while (begin != end)
     {
-        if (con.size() >= N)
-            throw SpanFullException();
-        con.push_back(*begin);
+		addNumber(*begin);
         ++begin;
     }
 }
