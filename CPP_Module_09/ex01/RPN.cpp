@@ -6,29 +6,11 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 22:29:20 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/06/01 21:55:55 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/06/21 04:15:08 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
-
-RPN::RPN() {}
-
-RPN::RPN(const RPN &other)
-{
-	_stack = other._stack;
-}
-
-RPN &RPN::operator=(const RPN &other)
-{
-	if (this != &other)
-	{
-		_stack = other._stack;
-	}
-	return *this;
-}
-
-std::stack<int> RPN::getStack() const { return _stack; }
 
 void RPN::parseExpression(const std::string &exp)
 {
@@ -60,6 +42,25 @@ void RPN::parseExpression(const std::string &exp)
 	if (size != 1)
 		throw std::exception();
 }
+
+RPN::RPN() {}
+
+RPN::RPN(const RPN &other)
+{
+	_stack = other._stack;
+}
+
+RPN &RPN::operator=(const RPN &other)
+{
+	if (this != &other)
+	{
+		_stack = other._stack;
+	}
+	return *this;
+}
+
+std::stack<int> RPN::getStack() const { return _stack; }
+
 
 void RPN::executeExpression(const std::string &exp)
 {
