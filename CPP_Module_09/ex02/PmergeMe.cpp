@@ -6,7 +6,7 @@
 /*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 19:15:24 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/06/20 04:27:34 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2026/06/24 12:48:52 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> &vec)
         }
     }
 
-    std::vector<int> sortedA = PmergeMe::sortVector(winners);
+    std::vector<int> winnersTmp = winners;
+    std::vector<int> sortedA = PmergeMe::sortVector(winnersTmp);
+
     std::vector<int> sortedB(sortedA.size());
     std::vector<bool> used(winners.size(), false);
 
@@ -98,24 +100,30 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> &vec)
     std::vector<int> res;
     res.push_back(sortedB[0]);
 
+    std::vector<int> rest(sortedB.size() - 1);
+
+    for (size_t i = 1; i < sortedB.size(); i++)
+        rest[i - 1] = sortedB[i];
+
     for (size_t i = 0; i < sortedA.size(); i++)
         res.push_back(sortedA[i]);
 
     if (oddNumber != -1)
-        sortedB.push_back(oddNumber);
+        rest.push_back(oddNumber);
 
-    std::vector<int> order = generateJacobsthal(sortedB.size());
+    std::vector<int> order = generateJacobsthal(rest.size());
 
-    for (size_t i = 1; i < order.size(); i++)
+    for (size_t i = 0; i < order.size(); i++)
     {
         size_t idx = order[i] - 1;
-        int target = sortedB[idx];
+        int target = rest[idx];
 
         std::vector<int>::iterator bound;
 
-        if (idx < sortedA.size())
+        int dec = oddNumber == -1 ? 0 : 1;
+        if (idx < rest.size() - dec)
         {
-            int pairedWinner = sortedA[idx];
+            int pairedWinner = sortedA[idx + 1];
             bound = std::find(res.begin(), res.end(), pairedWinner);
         }
         else
@@ -125,6 +133,7 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> &vec)
 
         res.insert(pos, target);
     }
+
     vec = res;
     return vec;
 }
@@ -165,7 +174,9 @@ std::deque<int> PmergeMe::sortDeque(std::deque<int> &deq)
         }
     }
 
-    std::deque<int> sortedA = PmergeMe::sortDeque(winners);
+    std::deque<int> winnersTmp = winners;
+    std::deque<int> sortedA = PmergeMe::sortDeque(winnersTmp);
+
     std::deque<int> sortedB(sortedA.size());
     std::vector<bool> used(winners.size(), false);
 
@@ -185,23 +196,29 @@ std::deque<int> PmergeMe::sortDeque(std::deque<int> &deq)
     std::deque<int> res;
     res.push_back(sortedB[0]);
 
+    std::deque<int> rest(sortedB.size() - 1);
+
+    for (size_t i = 1; i < sortedB.size(); i++)
+        rest[i - 1] = sortedB[i];
+
     for (size_t i = 0; i < sortedA.size(); i++)
         res.push_back(sortedA[i]);
 
     if (oddNumber != -1)
-        sortedB.push_back(oddNumber);
+        rest.push_back(oddNumber);
 
-    std::vector<int> order = generateJacobsthal(sortedB.size());
-    for (size_t i = 1; i < order.size(); i++)
+    std::vector<int> order = generateJacobsthal(rest.size());
+    for (size_t i = 0; i < order.size(); i++)
     {
         size_t idx = order[i] - 1;
-        int target = sortedB[idx];
+        int target = rest[idx];
 
         std::deque<int>::iterator bound;
 
-        if (idx < sortedA.size())
+        int dec = oddNumber == -1 ? 0 : 1;
+        if (idx < rest.size() - dec)
         {
-            int pairedWinner = sortedA[idx];
+            int pairedWinner = sortedA[idx + 1];
             bound = std::find(res.begin(), res.end(), pairedWinner);
         }
         else
@@ -289,17 +306,13 @@ void PmergeMe::sortData()
 void PmergeMe::printResults(char **argv, int argc) const
 {
     std::cout << "Before: ";
-    for (int i = 1; i < argc && i < 6; ++i)
+    for (int i = 1; i < argc; ++i)
         std::cout << argv[i] << " ";
-    if (argc > 6)
-        std::cout << "[...]";
     std::cout << std::endl;
 
     std::cout << "After:  ";
-    for (size_t i = 0; i < _vectorData.size() && i < 5; ++i)
+    for (size_t i = 0; i < _vectorData.size(); ++i)
         std::cout << _vectorData[i] << " ";
-    if (_vectorData.size() > 5)
-        std::cout << "[...]";
     std::cout << std::endl;
 
     std::cout << "Time to process a range of " << _vectorData.size()
