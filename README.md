@@ -1,4 +1,4 @@
-# C++ Piscine | 1337 Rabat
+# CPP Modules | 1337 Rabat
 
 > A comprehensive journey through Object-Oriented Programming, manual memory management, and the Standard Template Library (STL) in C++98.
 
