@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 19:12:27 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/05/24 05:53:46 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2025/12/29 11:50:00 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ private:
     std::string darkestSecret;
 
 public:
-    void setFirstName(const std::string &input);
+    void setFirstName(std::string input);
     std::string getFirstName() const;
 
-    void setLastName(const std::string &input);
+    void setLastName(std::string input);
     std::string getLastName() const;
 
-    void setNickname(const std::string &input);
+    void setNickname(std::string input);
     std::string getNickname() const;
 
-    void setPhoneNumber(const std::string &input);
+    void setPhoneNumber(std::string input);
     std::string getPhoneNumber() const;
 
-    void setDarkestSecret(const std::string &input);
+    void setDarkestSecret(std::string input);
     std::string getDarkestSecret() const;
 };
 

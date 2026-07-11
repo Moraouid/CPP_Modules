@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo < sel-abbo@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 19:13:40 by sel-abbo          #+#    #+#             */
-/*   Updated: 2026/05/24 05:54:01 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2025/12/29 11:49:48 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class PhoneBook
         int index;
         int count;
     public:
-        void addContact();
-        void searchContact();
+        void InitVar();
+        int addContact();
+        int searchContact();
 };
 
 #endif
