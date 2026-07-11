@@ -2,7 +2,7 @@
 
 > A comprehensive journey through Object-Oriented Programming, manual memory management, and the Standard Template Library (STL) in C++98.
 
-This repository contains my solutions for the core C++ modules (00 - 09) completed at the 1337 coding school (42 Network). The projects transition from procedural C to object-oriented C++, focusing heavily on safe memory handling, ad-hoc and subtype polymorphism, and generic programming.
+This repository contains my solutions for the core C++ modules (00 - 09) completed at the 1337 coding school (42 Network). The project transitions from procedural C to object-oriented C++, focusing heavily on safe memory handling, ad-hoc and subtype polymorphism, and generic programming.
 
 ## 📂 Curriculum Breakdown
 
@@ -29,3 +29,23 @@ To compile any specific exercise:
 cd CPP_0X/ex0Y
 make
 ./<executable_name>
+```
+
+## Makefile Rules
+
+`make` - Compiles the source files into the executable.
+
+`make clean` - Removes object files.
+
+`make fclean` - Removes object files and the executable.
+
+`make re` - Recompiles the entire project.
+
+## ⚙️ Architecture & Standards
+Orthodox Canonical Form: From CPP 02 onwards, all classes strictly implement the default constructor, copy constructor, copy assignment operator, and destructor.
+
+No Memory Leaks: Standardized manual memory management. All dynamically allocated memory is properly freed.
+
+Standard: Compiled with `c++ -Wall -Wextra -Werror -std=c++98`.
+
+Developed by Soufiane El Abboubi
